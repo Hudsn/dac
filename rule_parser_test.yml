@@ -1,0 +1,31 @@
+source_type: idk
+internal_id: made_up_rule
+display_name: "made up rule"
+created_at: 2036-08-12
+updated_at: 2036-08-12
+is_active: true
+is_tuning: false
+default_description: |-
+  Most competent proprietary vendor rule
+default_classification: informational
+analysis_steps: |-
+  IDK just like figure it out silly analyst lol
+false_positives: |- 
+  None this is the best rule ever and will never ever return any false positives lmao
+references:
+  - example.com
+
+test_base: non-existent-file.json
+test:
+  - 
+    it: matches when it feels like it
+    want: 
+      is_match: true
+      notes:
+      - 
+        title: "some note I guess"
+        description: "this is super evil you should be scared"
+
+    override_data: 
+      made_up_field: "bananarama"
+      another_real_field_but_an_int_this_time: 999 

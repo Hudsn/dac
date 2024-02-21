@@ -1,0 +1,45 @@
+source_type: foozle
+internal_id: evil_foozle
+display_name: "Evil foozle"
+created_at: 2024-01-15
+updated_at: 2024-01-15
+is_active: true
+is_tuning: false
+default_description: |-
+ This rule is meant to identify evil foozles based on the 'is_evil' field in the foozle data structure.
+default_classification: malicious
+analysis_steps: |-
+  Ensure the widget responsible for the foozle is behaving as expected. 
+  Check that the foozle that was flagged is not a custom and verified foozle in the environment by looking in the widget-foozle registry.
+  If this foozle appears to be unverified and is generating unexpected or unauthorized activity, escalate for immediate removal of this foozle.
+false_positives: |- 
+  The foozle parsing engine can incorrectly identify in-house custom foozles as evil.
+  If this foozle appears to be performing legitimate activity and its metadata matches that of the widget-foozle registry, this is likely a false positive.
+references:
+  - example.com
+
+test_base: example_foozle.json
+test:
+  - 
+    it: matches when "is_evil" is set to true
+    want: 
+      is_match: true
+      notes:
+      - 
+        title: "very evil foozle"
+        description: "this is indicative of an exceptionally evil foozle"
+
+    override_data: 
+      is_evil: true
+      tags: 
+        - evil_tag
+
+  - 
+    it: does not match when "is_evil" is set to false
+    want: 
+      is_match: false
+
+    override_data: 
+      is_evil: false
+      tags: 
+        - super cool
