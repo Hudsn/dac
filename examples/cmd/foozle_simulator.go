@@ -41,10 +41,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		fmt.Println(string(b))
-
-		fmt.Println("")
-		fmt.Println("")
+		fmt.Printf("%s\n\n", string(b))
 		time.Sleep(500 * time.Millisecond)
 	}
 }

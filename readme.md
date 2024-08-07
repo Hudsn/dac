@@ -128,7 +128,7 @@ A brief summary of each field is included below:
 - **IsTuning** : Whether the rule is in tuning or not. Your evaluator service should still generate [DetectionResult](###DetectionResult) items for tuning rules with the `IsTuning` field set to true. The default result example in `examples/foozle/foozle_rules/rules.go` demonstrates this.
 - **DefaultDescription**: The description to attach to the `Description` field of `DetectionResult` if it is left unchanged.
 - **DefaultClassification** The classification to attach to the `Classification` field of `DetectionResult` if it is left unchanged.
-- **AnalysisStels**: Describes to analysts what actions should be taken to make a determination on whether the detected items are true positives.
+- **AnalysisSteps**: Describes to analysts what actions should be taken to make a determination on whether the detected items are true positives.
 - **FalsePositives**: Conditions and situations in which known false positives may occur.
 - **References**: List of URLs that can be referenced to provide additional context or source material that was used in the development of the detection rule.
 - **TestBaseFile**: Local file which contains example telemetry (probably in JSON format) to use when testing against the rule. In our example this is found at `examples/foozle/example.json`.
